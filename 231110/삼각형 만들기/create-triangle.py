@@ -6,7 +6,7 @@ for i in range (n):
 
 
 #print(arr)
-max_val = 0 
+max_val = float('-inf') 
 for i in range(n):
     for j in range(i+1, n):
         for k in range(j+1, n):
