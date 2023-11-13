@@ -8,11 +8,12 @@
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-1|0xp|0일째❄️|
+2|0xp|0일째❄️|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
-|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[연습]스승의 은혜 2](https://www.codetree.ai/missions/5/problems/the-grace-form-teacher-2)|![보통][medium]|![Passed][passed]|[링크](https://github.com/graceeunhyun/codetree-TILs/blob/main/231113/%EC%8A%A4%EC%8A%B9%EC%9D%98%20%EC%9D%80%ED%98%9C%202/the-grace-form-teacher-2.py)|
+|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[연습]겹치지 않는 선분 2](https://www.codetree.ai/missions/5/problems/line-segments-that-do-not-overlap-2)|![보통][medium]|![Passed][passed]|[링크](https://github.com/graceeunhyun/codetree-TILs/blob/main/231113/%EA%B2%B9%EC%B9%98%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EC%84%A0%EB%B6%84%202/line-segments-that-do-not-overlap-2.py)|
+|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[연습]스승의 은혜 2](https://www.codetree.ai/missions/5/problems/the-grace-form-teacher-2)|![보통][medium]|![Failed][failed]|[링크](https://github.com/graceeunhyun/codetree-TILs/blob/main/231113/%EC%8A%A4%EC%8A%B9%EC%9D%98%20%EC%9D%80%ED%98%9C%202/the-grace-form-teacher-2.py)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
