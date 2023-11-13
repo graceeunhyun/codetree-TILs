@@ -1,21 +1,23 @@
-n = int(input())
-arr = []
-for i in range (n):
-    value = list(map(int, input().split()))
-    arr.append(value)
+# 입력
+N = int(input())
+segments = []
+for _ in range(N):
+    x1, x2 = map(int, input().split())
+    segments.append((x1, x2))
 
-#print(arr)
-#선분을 x2 값으로 정렬
-arr.sort(key=lambda value:value[1])
+# 선분을 x2 값을 기준으로 정렬
+segments.sort(key=lambda segment: segment[1])
 
-count = 0
+# 겹치지 않는 선분의 수 초기화
+non_overlapping_count = 0
 current_end = -float('inf')
 
-for a in arr:
-    x1, x2 = a
+# 선분들을 순회하며 겹치지 않는 선분의 수 계산
+for segment in segments:
+    x1, x2 = segment
     if x1 > current_end:
-        count +=1
+        non_overlapping_count += 1
         current_end = x2
 
-
-print(count)
+# 결과 출력
+print(non_overlapping_count)
