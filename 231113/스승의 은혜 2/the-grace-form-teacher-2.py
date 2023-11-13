@@ -15,9 +15,12 @@ for i in range(n):
             amount += (p[j]/2)
         else:
             amount+= p[j]
-    
+
         if( b >= amount):
             count+=1
+        else:
+            break
+            
     
     maxcount = max(maxcount, count)
 
