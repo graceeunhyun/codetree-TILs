@@ -2,8 +2,8 @@
 n = int(input())
 arr = []
 for _ in range(n):
-    x1, x2 = map(int, input().split())
-    arr.append((x1, x2))
+    value = map(int, input().split())
+    arr.append(value)
 
 count = 0
 
