@@ -13,8 +13,9 @@ for i in range(n):
     for j in range(n):
         if j == i:
             continue
-        
-        if((arr[i][0]<= arr[j][0] and arr[i][1]>= arr[j][1]) or (arr[i][0] >= arr[j][0] and arr[i][1] <= arr[j][1])):
+        x1, y1 = arr[i]
+        x2, y2 = arr[j]
+        if((x1<=x2 and y1>= y2) or (x1 >= x2 and y1 <= y2)):
             overlap = True
             break
         
