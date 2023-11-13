@@ -19,7 +19,7 @@ for i in range(n):
             overlap = True
             break
         
-    if overlap == True:
+    if overlap == False:
         count+=1
 
 print(count)
