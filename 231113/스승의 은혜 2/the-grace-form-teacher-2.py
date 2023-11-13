@@ -7,6 +7,7 @@ for i in range(n):
         p.append(value)
 
 maxcount = 0
+sorted(p)
 for i in range(n):
     amount = 0
     count = 0 
