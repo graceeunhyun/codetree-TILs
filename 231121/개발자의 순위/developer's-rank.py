@@ -7,10 +7,15 @@ for i in range (k):
 #print(arr)
 
 count = 0
-for i in range (k):
-    for a in range(n):
-        for b in range (n):
+
+for a in range(n):
+    for b in range (n):
+        boolean = False
+        for i in range (k):
             if(a!=b and arr[i][a] < arr[i][b]):
-                count +=1
+                boolean = True
+        if boolean:
+            count+=1
+                
         
 print(count//2)
