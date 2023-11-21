@@ -10,12 +10,14 @@ count = 0
 
 for a in range(n):
     for b in range (n):
-        boolean = False
+        boolean = True
+        if(a == b):
+            continue;
         for i in range (k):
-            if(a!=b and arr[i][a] < arr[i][b]):
-                boolean = True
+            if(arr[i][a] > arr[i][b]):
+                boolean = False
         if boolean:
             count+=1
                 
         
-print(count//2)
+print(count)
