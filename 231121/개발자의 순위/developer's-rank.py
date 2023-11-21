@@ -8,8 +8,8 @@ for i in range (k):
 
 count = 0
 for i in range (k):
-    for a in range(k):
-        for b in range (k):
+    for a in range(n):
+        for b in range (n):
             if(a!=b and arr[i][a] < arr[i][b]):
                 count +=1
         
