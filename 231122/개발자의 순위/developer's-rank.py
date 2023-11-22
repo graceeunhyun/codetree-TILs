@@ -12,13 +12,14 @@ for a in range(n):
     for b in range (n):
         if(a == b):
             continue
-        boolean = True
+        check = True
         for i in range (k):
-            if(arr[i][a] >= arr[i][b]):
-                boolean = False
+            if(arr[i][a] < arr[i][b]):
+                check = False
+                #print(a, b, arr[i][a], arr[i][b])
                 break;
 
-        if boolean:
+        if check:
             count+=1
                 
         
