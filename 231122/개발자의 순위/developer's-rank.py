@@ -1,22 +1,23 @@
-K, N = tuple(map(int, input().split()))
-arr_2d = [
-    [0 for _ in range(N+1)]
-    for _ in range(K)
-]
-for i in range(K):
-    arr = list(map(int, input().split()))
-    for j in range(len(arr)):
-        arr_2d[i][arr[j]] = j
+k, n = map(int, input().split())
+arr = []
+for i in range (k):
+    value = list(map(int, input().split()))
+    arr.append(value)
 
-cnt = 0
-for i in range(1, N+1):
-    for j in range(1, N+1):
-        if i == j: 
-            continue
+#print(arr)
+
+count = 0
+
+for a in range(n):
+    for b in range (n):
         boolean = True
-        for k in range(K):
-            if arr_2d[k][i] > arr_2d[k][j]:
+        if(a == b):
+            continue;
+        for i in range (k):
+            if(arr[i][a] > arr[i][b]):
                 boolean = False
         if boolean:
-            cnt += 1
-print(cnt)
+            count+=1
+                
+        
+print(count)
