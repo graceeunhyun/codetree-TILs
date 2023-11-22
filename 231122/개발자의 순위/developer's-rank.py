@@ -10,10 +10,9 @@ count = 0
 
 for a in range(n):
     for b in range (n):
-        boolean = True
         if(a == b):
-            continue;
-
+            continue
+        boolean = True
         for i in range (k):
             if(arr[i][a] >= arr[i][b]):
                 boolean = False
