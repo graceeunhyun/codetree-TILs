@@ -15,7 +15,7 @@ for a in range(n):
             continue;
 
         for i in range (k):
-            if(arr[i][a] > arr[i][b]):
+            if(arr[i][a] >= arr[i][b]):
                 boolean = False
                 break;
 
