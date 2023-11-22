@@ -1,4 +1,4 @@
-k, n = map(int, input().split())
+k, n = tuple(map(int, input().split()))
 arr = []
 for i in range (k):
     value = list(map(int, input().split()))
@@ -13,9 +13,12 @@ for a in range(n):
         boolean = True
         if(a == b):
             continue;
+
         for i in range (k):
             if(arr[i][a] > arr[i][b]):
                 boolean = False
+                break;
+
         if boolean:
             count+=1
                 
