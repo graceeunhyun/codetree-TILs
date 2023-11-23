@@ -23,8 +23,8 @@ for i in range(n):
         
         if (b >= amount):
              count+=1
-        # else:
-        #     break
+        else:
+            break
     
     maxcount = max(maxcount, count)
 
