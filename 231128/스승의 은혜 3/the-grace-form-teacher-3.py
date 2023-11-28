@@ -8,23 +8,24 @@ def custom_sort(item):
     return item[0]/2+item[1]
 
 arr_sorted = sorted(arr, key=custom_sort)
-#print(arr)
+#print(arr_sorted)
 
 for i in range(n):
-    amount = 0
+    remaining_budget = b
     count = 0
 
     for j in range(n):
+        amount=0
         if i == j:
             amount +=(arr_sorted[j][0]/2) + arr_sorted[j][1]
         
         else:
             amount += arr_sorted[j][0] + arr_sorted[j][1]
         
-        if (b >= amount):
-             count+=1
-        # else:
-        #     break
+        if (remaining_budget >= amount):
+            remaining_budget-=amount
+            count+=1
+        
     
     maxcount = max(maxcount, count)
 
