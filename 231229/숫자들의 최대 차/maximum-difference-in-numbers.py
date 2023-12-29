@@ -17,7 +17,7 @@ if k > 0:
             
             maxcount = max(maxcount, count)
 elif k == 0:
-    if i in range(1, 10001):
+    for i in range(1, 10001):
         count = 0
         for elem in arr:
             if elem == i:
