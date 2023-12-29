@@ -1,5 +1,6 @@
 n, k = tuple(map(int, input().split()))
 arr = [int(input()) for _ in range(n)]
+arr.sort()
 
 maxcount = 0
 
