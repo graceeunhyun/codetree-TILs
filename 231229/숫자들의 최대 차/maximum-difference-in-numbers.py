@@ -16,7 +16,7 @@ if k > 0:
                     count+=1
             
             maxcount = max(maxcount, count)
-if k == 0:
+elif k == 0:
     if i in range(1, 10001):
         count = 0
         for elem in arr:
