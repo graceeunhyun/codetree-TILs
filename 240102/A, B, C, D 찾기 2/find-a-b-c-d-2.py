@@ -1,15 +1,23 @@
-from itertools import permutations
-
 arr = list(map(int, input().split()))
 arr.sort()
 
-def find_ABCD(values):
-    for perm in permutations(values):
-        A, B, C, D = perm[:4]
-        if A <= B <= C <= D and A + B == perm[4] and B + C == perm[5] and C + D == perm[6] and D + A == perm[7] \
-                and A + C == perm[8] and B + D == perm[9] and A + B + C == perm[10] and A + B + D == perm[11] \
-                and A + C + D == perm[12] and B + C + D == perm[13] and A + B + C + D == perm[14]:
-            return A, B, C, D
+def is_equal_array(arr1, arr2):
+    arr1.sort();
 
-result = find_ABCD(arr)
-print(*result)
+    if len(arr1) != len(arr2):
+        return Fasle
+
+    for elem1, elem2 in zip(arr1, arr2):
+        if elem1 != elem2:
+            return False 
+    
+    return True
+    
+
+
+for a in range(1, 41):
+    for b in range(a, 41):
+        for c in range(b, 41):
+            for d in range(c, 41):
+                if is_equal_array([a, b, c, d, a+b, b+c, c+d, d+a, a+c, b+d, a+b+c, a+b+d, a+c+d, b+c+d, a+b+c+d], arr):
+                    print(a, b, c, d)
