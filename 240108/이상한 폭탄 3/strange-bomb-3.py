@@ -15,7 +15,7 @@ def findVal(i):
             curCount+=1
     
     #print(curCount, num)
-    return curCount, num;
+    return curCount, arr[i];
 
 
 for i in range (n):
@@ -25,4 +25,4 @@ for i in range (n):
         max_count = cur_count
         max_num = max(cur_num, max_num)
 
-print(max_num+1)
+print(max_num)
