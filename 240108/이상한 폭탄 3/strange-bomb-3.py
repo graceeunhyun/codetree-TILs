@@ -14,15 +14,17 @@ def findVal(i):
         if(arr[i] == arr[j] and j-i <= k ):
             curCount+=1
     
-    #print(curCount, num)
+    #print(curCount, arr[i], max_count, max_num)
     return curCount, arr[i];
 
 
 for i in range (n):
     cur_count, cur_num = findVal(i)
 
-    if cur_count >= max_count:
+    if cur_count > max_count:
         max_count = cur_count
-        max_num = max(cur_num, max_num)
+        max_num = cur_num
+    elif cur_count == max_count:
+        max_num = max(max_num, cur_num)
 
 print(max_num)
