@@ -23,6 +23,6 @@ for i in range (n):
 
     if cur_count >= max_count:
         max_count = cur_count
-        max_num = cur_num
+        max_num = max(cur_num, max_num)
 
 print(max_num)
