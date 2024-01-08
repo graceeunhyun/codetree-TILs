@@ -15,6 +15,9 @@ def findVal(i):
             curCount+=1
     
     #print(curCount, arr[i], max_count, max_num)
+    if(curCount == 1):
+        return 0, 0
+
     return curCount, arr[i];
 
 
