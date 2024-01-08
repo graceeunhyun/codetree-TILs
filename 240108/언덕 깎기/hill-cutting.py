@@ -1,5 +1,6 @@
 n = int(input())
 arr = [int(input()) for _ in range(n)]
+k= 17
 
 def findVal(i):
     
@@ -7,8 +8,8 @@ def findVal(i):
     for j in range(n):
         if(arr[j] < i):
             cal += (i - arr[j]) * (i - arr[j])
-        elif(arr[j] > i+17):
-            cal += (arr[j] - (i+17)) * (arr[j] - (i+17))
+        elif(arr[j] > i+k):
+            cal += (arr[j] - (i+k)) * (arr[j] - (i+k))
         else:
             continue
         
@@ -16,8 +17,8 @@ def findVal(i):
 
     return cal
 
-max_cal = float('inf')
+ans = float('inf')
 for i in range(1, 84):
-    max_cal = min(max_cal, findVal(i))
+    ans = min(ans, findVal(i))
 
-print(max_cal);
+print(ans);
