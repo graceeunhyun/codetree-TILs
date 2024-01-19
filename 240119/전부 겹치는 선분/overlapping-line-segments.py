@@ -6,7 +6,7 @@ for i in range (n):
 
 arr.sort()
 for i in range(1, n):
-    if arr[i][0] > arr[i-1][1]:
+    if arr[i][0] >= arr[i-1][1]:
         print("No")
         break
     else:
