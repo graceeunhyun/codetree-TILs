@@ -1,16 +1,13 @@
 n = int(input())
 arr = []
+max_x1 = 0
+min_x2 = float('inf')
 for i in range (n):
-    value = list(map(int, input().split()))
-    arr.append(value)
+    x1, x2 = tuple(map(int, input().split()))
+    max_x1 = max(max_x1, x1)
+    min_x2 = min(min_x2, x2)
 
-arr.sort()
-boolVal = False;
-for i in range(1, n):
-    if arr[i][0] >= arr[i-1][1]:
-        boolVal = True
-        break   
-if(boolVal):
-    print("No")
-else:
+if min_x2 > = max_x1:
     print("Yes")
+else:
+    print("No")
