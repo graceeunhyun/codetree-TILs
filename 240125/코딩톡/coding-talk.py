@@ -12,15 +12,23 @@ for _ in range(m):
 sorted_data = sorted(unread_count, key=lambda x:x[1])
 
 answer = []
+val = False
 for j in range(m):
-    if(j >= p-1):
+    if(j == p-1):
+        if(sorted_data[j][1] == 0):
+            print("")
+            val = True
+            break;
+        else:
+            answer.append(sorted_data[j][0])
+    elif(j > p-1):
         answer.append(sorted_data[j][0])
 
+if(val == False): 
+    #해당 answer 빼고 다 저장하기
+    realAnswer = []
+    for i in range(n):
+        if i not in answer:
+            realAnswer.append(chr(ord('A')+i))
 
-#해당 answer 빼고 다 저장하기
-realAnswer = []
-for i in range(n):
-   if i not in answer:
-    realAnswer.append(chr(ord('A')+i))
-
-print(" ".join(realAnswer))
+    print(" ".join(realAnswer))
