@@ -24,6 +24,10 @@ for j in range(m):
     elif(j > p-1):
         answer.append(sorted_data[j][0])
 
+    elif(j < p-1):
+        if(j >=1 and sorted_data[j][1] == sorted_data[j-1][1]):
+            answer.append(sorted_data[j-1][0])
+
 if(val == False): 
     #해당 answer 빼고 다 저장하기
     realAnswer = []
