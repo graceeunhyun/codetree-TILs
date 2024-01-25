@@ -21,12 +21,17 @@ for j in range(m):
             break;
         else:
             answer.append(arr[j][0])
+            if(j >=1 and arr[j][1] == arr[j-1][1]):
+                    
+                    answer.append(arr[j-1][0])
+
     elif(j > p-1):
         answer.append(arr[j][0])
 
-    elif(j < p-1):
-        if(j >=1 and arr[j][1] == arr[j-1][1]):
-            answer.append(arr[j-1][0])
+    # elif(j < p-1):
+    #     if(j >=1 and arr[j][1] == arr[j-1][1]):
+    #         print(arr[j], j)
+    #         answer.append(arr[j-1][0])
 
 if(val == False): 
     #해당 answer 빼고 다 저장하기
