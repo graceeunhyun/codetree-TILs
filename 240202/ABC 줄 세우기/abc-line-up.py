@@ -1,25 +1,22 @@
-def min_swaps_to_sort(arr):
-    n = len(arr)
-    swap_count = 0
-
-    for i in range(1, n):
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and key < arr[j]:
-            arr[j + 1], arr[j] = arr[j], arr[j+1]
-            j -= 1
-            swap_count += 1
-            #print(arr)
-        arr[j + 1] = key
-
-    return swap_count
-
-# 입력 받기
+#변수 선언 및 입력
 n = int(input())
-arr = input().split()
+arr = [0] + list(input().split())
+ans = 0
 
-# 정렬하기
-result = min_swaps_to_sort(arr)
+for i in range(1, n+1):
+    x = chr(ord('A') + i-1)
 
-# 결과 출력
-print(result)
+    idx = 0
+    #i번째 알파벳을 찾아 idx 에 저장
+    for j in range(1, n+1):
+        if arr[j] == x:
+            idx = j
+    
+    
+    #idx 번째 알파벳을 i 번째까지 수합
+    for j in range(idx -1, i-1, -1):
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+        ans+=1
+    
+
+print(ans)
