@@ -8,7 +8,7 @@ a = 0
 b= 0
 
 total= 0
-winner = 0
+winner = 'AB'
 
 for i in range(n):
     who, count = arr[i][0], (int)(arr[i][1])
@@ -25,7 +25,7 @@ for i in range(n):
         if( winner!= 'B'):
             total+=1
             winner ='B'
-    else:
+    elif ( b ==a and winner != 'AB'):
         total+=1
         winner ='AB'
 
