@@ -1,58 +1,41 @@
-from queue import Queue
+from collections import deque
 
 def bfs(arr, start, end):
-    n = len(arr)
-    visited = [[False] * n for _ in range(n)]
-    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    arr_dir = [[-1, 0], [1, 0], [0, 1], [0, -1]]
+    visited = [[False] * 10 for _ in range(10)]
+    queue = deque([(start[0], start[1], 0)])  # (x, y, distance)
 
-    queue = Queue()
-    queue.put((start, 0))  # Distance is included in the tuple
+    while queue:
+        x, y, dist = queue.popleft()
 
-    while not queue.empty():
-        current, dist = queue.get()
-        i, j = current
+        if (x, y) == end:
+            return dist-1
 
-        if (i, j) == end:
-            return dist
+        for i, j in arr_dir:
+            new_x, new_y = x + i, y + j
 
-        for di, dj in directions:
-            ni, nj = i + di, j + dj
+            if 0 <= new_x < 10 and 0 <= new_y < 10 and not visited[new_x][new_y] and arr[new_x][new_y] != 'R':
+                visited[new_x][new_y] = True
+                queue.append((new_x, new_y, dist + 1))
 
-            if 0 <= ni < n and 0 <= nj < n and not visited[ni][nj] and arr[ni][nj] == '.' and arr[ni][nj] != 'R':
-                visited[ni][nj] = True
-                queue.put(((ni, nj), dist + 1))
-
-    return float('inf')  # If there is no path
+    return -1
 
 def find_shortest_distance(arr):
-    n = len(arr)
+    loc_L = loc_B = None
 
-    loc_L = None
-    loc_R = None
-    loc_B = None
-
-    for i in range(n):
-        for j in range(n):
+    for i in range(10):
+        for j in range(10):
             if arr[i][j] == 'L':
                 loc_L = (i, j)
-            elif arr[i][j] == 'R':
-                loc_R = (i, j)
             elif arr[i][j] == 'B':
                 loc_B = (i, j)
 
-    if loc_L is None or loc_R is None or loc_B is None:
-        return -1  # Invalid input
-
     distance_to_B = bfs(arr, loc_L, loc_B)
-
-
-    if distance_to_B == float('inf'):
-        return -1  # No valid path
 
     return distance_to_B
 
 # 입력 받기
-arr = [input() for _ in range(10)]
+arr = [list(input()) for _ in range(10)]
 
 # 결과 출력
 result = find_shortest_distance(arr)
