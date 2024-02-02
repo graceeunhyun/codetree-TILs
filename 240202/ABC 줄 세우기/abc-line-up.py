@@ -6,9 +6,10 @@ def min_swaps_to_sort(arr):
         key = arr[i]
         j = i - 1
         while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
+            arr[j + 1], arr[j] = arr[j], arr[j+1]
             j -= 1
             swap_count += 1
+            print(arr)
         arr[j + 1] = key
 
     return swap_count
@@ -21,4 +22,4 @@ arr = input().split()
 result = min_swaps_to_sort(arr)
 
 # 결과 출력
-print(result-1)
+print(result)
