@@ -9,7 +9,7 @@ def min_swaps_to_sort(arr):
             arr[j + 1], arr[j] = arr[j], arr[j+1]
             j -= 1
             swap_count += 1
-            print(arr)
+            #print(arr)
         arr[j + 1] = key
 
     return swap_count
