@@ -29,17 +29,15 @@ def whoIsWinner(a, b):
         return "Draw"
 
 ans = 0
-rcp = ["S", "R", "N"]
-for i in range(3):
-    
-    for j in range(3): 
-        if(i == j):
-            continue
-        count = 0
+rcp = [["S", "R", "N"], ["S", "N", "R"], 
+["R", "S", "N"], ["R", "N", "S"],
+["N", "S", "R"], ["N", "R", "S"]]
+for i in range(6):
 
+        count = 0
         for k in range(n):
 
-            if "a" == whoIsWinner(rcp[arr[k][0]-1], rcp[arr[k][1]-1]):
+            if "a" == whoIsWinner(rcp[i][arr[k][0]-1], rcp[i][arr[k][1]-1]):
                 count+=1
                 #print(count, i, j, rcp[i], rcp[j])
     
