@@ -32,17 +32,21 @@ class DoubleLinkedList:
             self.tail.prev = new_node
 
     def erase(self, node):
-        if node == self.begin():
-            self.head = node.next
-            if node.next:
-                node.next.prev = None
-        elif node == self.end():
-            self.tail = node.prev
-            if node.prev:
-                node.prev.next = None
-        else:
-            node.prev.next = node.next
-            node.next.prev = node.prev
+        next_node = node.next
+
+        if node == self.begin():           # 만약 head가 삭제되어야 한다면
+            temp = self.head
+            temp.next.prev = None          # 새로 head가 될 노드의 prev값을 지워줍니다.
+            self.head = temp.next          # head값을 새로 갱신해주고
+            temp.next = None               # 이전 head의 next 값을 지워줍니다.
+
+        else:                              # head가 삭제되는 것이 아니라면
+            node.prev.next = node.next     # 바로 전 노드의 next값을 바꿔주고
+            node.next.prev = node.prev     # 바로 다음 노드의 prev값을 바꿔주고
+            node.prev = None               # 해당 노드의 prev 와
+            node.next = None               # 해당 노드의 next 값을 모두 지워줍니다.
+
+        return next_node
 
     def insert(self, node, new_data):
         if node == self.end():
