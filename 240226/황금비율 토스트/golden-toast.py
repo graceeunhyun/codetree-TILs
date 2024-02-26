@@ -76,7 +76,7 @@ for i in range(n):
 
 
 index = n
-it = l.tail
+it = l.end()
 for j in range(m):
     command = input().split()
 
@@ -87,7 +87,7 @@ for j in range(m):
         if(it != l.end()):
             it = it.next
     elif command[0] == 'D':
-        if(it != l.end()):
+        if it!= l.end():
             l.erase(it)
     elif command[0] == 'P':
         l.insert(it, command[1])
