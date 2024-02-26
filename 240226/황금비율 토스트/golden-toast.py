@@ -40,7 +40,7 @@ class DoubleLinkedList:
             self.head = temp.next          # head값을 새로 갱신해주고
             temp.next = None               # 이전 head의 next 값을 지워줍니다.
 
-        else:                              # head가 삭제되는 것이 아니라면
+        elif (node != self.end()):                              # head가 삭제되는 것이 아니라면
             node.prev.next = node.next     # 바로 전 노드의 next값을 바꿔주고
             node.next.prev = node.prev     # 바로 다음 노드의 prev값을 바꿔주고
             node.prev = None               # 해당 노드의 prev 와
