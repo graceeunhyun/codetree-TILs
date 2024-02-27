@@ -46,6 +46,8 @@ class DoubleLinkedList:
             node.prev = None               # 해당 노드의 prev 와
             node.next = None               # 해당 노드의 next 값을 모두 지워줍니다.
 
+        return next_node
+
     def insert(self, node, new_data):
         if node == self.end():
             self.push_back(new_data)
@@ -86,7 +88,7 @@ for j in range(m):
             it = it.next
     elif command[0] == 'D':
         if it!= l.end():
-            l.erase(it)
+            it = l.erase(it)
     elif command[0] == 'P':
         l.insert(it, command[1])
 
