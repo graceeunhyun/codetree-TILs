@@ -1,7 +1,7 @@
 n = int(input())
 arr = list(map(int, input().split()))
 
-for pos in range(5):
+for pos in range(4):
     arr_new = [[] for _ in range(10)]
     for i in range (n):
         digit = (int)((arr[i]/(10**pos)) % 10)
