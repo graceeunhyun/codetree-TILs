@@ -1,7 +1,10 @@
 n = int(input())
 arr = list(map(int, input().split()))
 
-for pos in range(6):
+max_value = max(arr)
+num_iterations = len(str(max_value))
+
+for pos in range(num_iterations):
     arr_new = [[] for _ in range(10)]
     for i in range (n):
         digit = (int)((arr[i]/(10**pos)) % 10)
