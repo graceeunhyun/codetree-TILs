@@ -12,10 +12,7 @@ def count_happy_sequences(arr, m):
         for i in range(1, len(row)):
             if row[i] == row[i - 1]:
                 consecutive += 1
-            else:
-                if consecutive >= m:
-                    count += 1
-                consecutive = 1
+            
         if consecutive >= m:
             count += 1
     return count
