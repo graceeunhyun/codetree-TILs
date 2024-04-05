@@ -23,7 +23,7 @@ def gold_countFun(x, y, k):
 max_gold = 0 
 for i in range(n):
     for j in range(n):
-        for k in range(n):
+        for k in range(2*n+1):
             gold_count = gold_countFun(i, j, k)
             mining_cost = get_cost(k)
 
