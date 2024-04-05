@@ -1,5 +1,4 @@
 n, m = map(int, input().split())
-
 grid = []
 for _ in range(n):
     row = list(map(int, input().split()))
@@ -12,9 +11,15 @@ def count_happy_sequences(arr, m):
         for i in range(1, len(row)):
             if row[i] == row[i - 1]:
                 consecutive += 1
-            
+                #print(row, i, row[i], row[i-1])
+            else:
+                if consecutive <m:
+                    consecutive = 1
+                    continue
+        
         if consecutive >= m:
             count += 1
+            #print(consecutive, count)
     return count
 
 count = count_happy_sequences(grid, m)
