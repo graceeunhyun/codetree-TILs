@@ -7,7 +7,7 @@ for i in range(n):
 def find_thisIsPos(x1, x2, y1, y2):
     for i in range(x1, x2+1):
         for j in range(y1, y2+1):
-            if grid[i][j] < 0:
+            if grid[i][j] <= 0:
                 return False
     return True
 
