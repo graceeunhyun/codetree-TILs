@@ -11,7 +11,7 @@ def find_thisIsPos(x1, x2, y1, y2):
                 return False
     return True
 
-max_val = 0
+max_val = -1
 
 for i in range(n):
     for j in range(m):
