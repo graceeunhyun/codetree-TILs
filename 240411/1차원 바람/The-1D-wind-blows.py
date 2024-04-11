@@ -23,10 +23,10 @@ def findSameNum(row, diff):
     return False
 
 def rearrangeLeft(row):
-    if row < 0 or row >= n or visited[row]:
+    if row < 0 or row >= n: 
         return
     
-    visited[row] = True
+    # visited[row] = True
 
     temp = arr[row][m-1]
     for i in range(m-1, 0, -1):
@@ -40,10 +40,10 @@ def rearrangeLeft(row):
         rearrangeRight(row+1)
 
 def rearrangeRight(row):
-    if row < 0 or row >= n or visited[row]:
+    if row < 0 or row >= n:
         return
     
-    visited[row] = True
+    # visited[row] = True
     
     temp = arr[row][0]
     for i in range(1, m):
