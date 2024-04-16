@@ -11,7 +11,7 @@ number = arr[r-1][c-1]
 
 def explode(x, y, number):
     dxs, dys = [0, 0, 1, -1], [-1, 1, 0, 0]
-    movenum = number - 1
+    movenum = number
     arr[x][y] = 0
     for dx, dy in zip(dxs, dys):
         for i in range(movenum):
