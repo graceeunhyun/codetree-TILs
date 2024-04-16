@@ -15,8 +15,8 @@ def explode(x, y, number):
     arr[x][y] = 0
     for dx, dy in zip(dxs, dys):
         for i in range(movenum):
-            nx = x + dx 
-            ny = y + dy
+            nx = x + dx*i
+            ny = y + dy*i
             if 0 <= nx < n and 0 <= ny < n:
                 arr[nx][ny] = 0
     
