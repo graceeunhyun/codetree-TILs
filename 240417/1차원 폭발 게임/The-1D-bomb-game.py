@@ -1,25 +1,41 @@
-n, m = map(int, input().split())
-arr = list(map(int, input().split()))
-
-# Function to explode sequences
-def explode(arr, m):
-    stack = []
-    for num in arr:
-        if stack and stack[-1][0] == num:
-            stack[-1][1] += 1
-            if stack[-1][1] >= m:
-                for _ in range(stack[-1][1]):
-                    stack.pop()
+def get_consecutive_counts(maps):
+    n = len(maps)
+    consecutive_counts = [0] * n
+    count = 0
+    for i in range(n-1, 0, -1):
+        if maps[i] == maps[i-1]:
+            count += 1
         else:
-            stack.append([num, 1])
-    return stack
+            count = 0
+        consecutive_counts[i] = count
+    return consecutive_counts
 
-result = explode(arr, m)
 
-if result:
-    remaining_count = sum(count for _, count in result)
-    print(remaining_count)
-    for num, count in result:
-        print('\n'.join(str(num) for _ in range(count)))
-else:
-    print(0)
+def can_bomb(consecutive_counts, m):
+    return any(count >= m-1 for count in consecutive_counts)
+
+
+def bomb(maps, consecutive_counts, m):
+    if m == 1:
+        return []
+    n = len(maps)
+    bombed = [0] * n
+    for i, count in enumerate(consecutive_counts):
+        if count >= m-1:
+            for j in range(i-1, i+count):
+                bombed[j] = 1
+    return [maps[i] for i in range(n) if not bombed[i]]
+
+
+n, m = map(int, input().split())
+maps = [int(input()) for _ in range(n)]
+
+while True:
+    consecutive_counts = get_consecutive_counts(maps)
+    if not can_bomb(consecutive_counts, m):
+        break
+    maps = bomb(maps, consecutive_counts, m)
+
+print(len(maps))
+for value in maps:
+    print(value)
