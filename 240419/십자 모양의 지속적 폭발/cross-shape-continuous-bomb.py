@@ -10,14 +10,10 @@ for i in range(m):
     val = int(input())
     bomb.append(val)
 
-
-
-
 def explode(col, index):
-    if(col <0 or col >=n or index< 0 or index >=n ):
-        return 
-
+    
     val = arr[index][col]
+    
     x = index
     y = col
     dxs, dys = [-1, 1, 0,0], [0,0,1,-1 ]
@@ -45,10 +41,23 @@ def explode(col, index):
             arr[i][j] = temp[i][j]
 
 
+def is_range(x, y):
+    return 0<=x<n and 0<=y<n
+
+def findLastNum(col):
+
+    for i in range(n):
+        if is_range(i, col):
+            if arr[i][col] !=0:
+                return i
+    
+    return 0
+
+
 #m 번째 폭탄이 터저야함. 
 for i in range(m):
-
-    explode(bomb[i]-1 , i)
+    
+    explode(bomb[i]-1 , findLastNum((bomb[i]-1)))
     #중력이 내리는 로직 
 
 
