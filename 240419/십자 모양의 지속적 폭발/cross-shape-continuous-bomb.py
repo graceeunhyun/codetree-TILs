@@ -14,6 +14,9 @@ for i in range(m):
 
 
 def explode(col, index):
+    if(col <0 or col >=n or index< 0 or index >=n ):
+        return 
+
     val = arr[index][col]
     x = index
     y = col
