@@ -17,31 +17,39 @@ def get_end_index(startIdx, j, curr_num):
 # 중력 작용 받기
 
 def explode():
-    for j in range(n):
+    while(True):
+        did_explode = False
+        for j in range(n):
+            
+            for i in range(n):
+                #각 위치마다 그 뒤로 폭탄이 M 개 이상 있는지 확
+
+                if arr[i][j] == 0:
+                    continue
+
+                end_idx = get_end_index(i, j, arr[i][j])
+                #print(end_idx, i, arr[i][j])
+                if end_idx-i+1>=m:
+                    
+                    for s in range(i, end_idx+1):
+                        arr[s][j] =0
+                    
+                    did_explode = True 
+
+        temp = [[0] * n for _ in range(n)]
+    
+        for j in range(n):
+            count = n-1
+            for i in range(n-1, -1, -1):
+                if(arr[i][j] != 0):
+                    temp[count][j] = arr[i][j]
+                    count -=1
         
-        for i in range(n):
-            #각 위치마다 그 뒤로 폭탄이 M 개 이상 있는지 확
+        # print(temp)
 
-            if arr[i][j] == 0:
-                continue
-
-            end_idx = get_end_index(i, j, arr[i][j])
-            #print(end_idx, i, arr[i][j])
-            if end_idx-i+1>=m:
-                
-                for s in range(i, end_idx+1):
-                    arr[s][j] =0
-
-    temp = [[0] * n for _ in range(n)]
-
-    
-    for j in range(n):
-        count = n-1
-        for i in range(n-1, -1, -1):
-            if(arr[i][j] != 0):
-                temp[count][j] = arr[i][j]
-                count -=1
-    
+        if not did_explode:
+            break
+        
 
     return temp
 
@@ -70,12 +78,16 @@ def rotate():
     
     temp = gravitiy(temp)
 
+    # print("rotate", temp)
+
+
     return temp
 
-
+arr = explode()
 for _ in range(k):
-    arr = explode()
+
     arr = rotate()
+    arr = explode()
 
 
 count = 0
