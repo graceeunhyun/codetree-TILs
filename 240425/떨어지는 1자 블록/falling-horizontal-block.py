@@ -24,9 +24,9 @@ def check(colStart, colEnd, row):
 
 k=k-1
 # Iterate over the rows and check if it's valid to insert the block
-for i in range(n-1, -1, -1):
-    if check(k, k + m, i):
-        insert(i, k)
+for i in range(n):
+    if not check(k, k + m, i):
+        insert(i-1, k)
         break
 
 
