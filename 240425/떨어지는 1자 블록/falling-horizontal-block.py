@@ -29,10 +29,16 @@ if n == 1:
         insert(0, k)
 
 
+possibleIndex = 0
+
 for i in range(n):
-    if not check(k, k + m, i):
-        insert(i-1, k)
+    if check(k, k + m, i):
+        possibleIndex = i
+    else:
         break
+
+insert(possibleIndex, k)
+        
 
 
 # Print the updated array
