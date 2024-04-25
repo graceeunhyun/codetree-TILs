@@ -24,6 +24,11 @@ def check(colStart, colEnd, row):
 
 k=k-1
 # Iterate over the rows and check if it's valid to insert the block
+if n == 1:
+    if check(k, k+m, 0):
+        insert(0, k)
+
+
 for i in range(n):
     if not check(k, k + m, i):
         insert(i-1, k)
