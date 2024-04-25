@@ -1,3 +1,4 @@
+from collections import deque
 n, r, c = map(int, input().split())
 arr = []
 
@@ -9,6 +10,7 @@ r = r - 1
 c = c - 1
 
 visited = [[0 for _ in range(n)] for _ in range(n)]
+dq = deque() 
 
 max_x = r
 max_y = c
@@ -19,7 +21,7 @@ def in_range(x, y):
 def move(x, y):
     global max_x, max_y, visited
     visited[x][y] = 1
-
+    dq.append(arr[x][y])
     dxs, dys = [-1,1,0,0], [0,0,-1,1]
     priority = [4, 3, 2, 1]
     canMove = False
@@ -33,6 +35,7 @@ def move(x, y):
             max_x, max_y = curx, cury
             canMove = True
             visited[curx][cury] = 1
+            
             break
 
     if not canMove:
@@ -43,8 +46,5 @@ def move(x, y):
 # Start the DFS from the initial position (r, c)
 move(r, c)
 
-# Print the result
-for i in range(n):
-    for j in range(n):
-        if(visited[i][j]==1):
-            print(arr[i][j], end=" ")
+for item in dq:
+    print(item, end=" ")
