@@ -7,17 +7,21 @@ sum = 0
 def roll_dice(dice, dir):
     global r, c
     if dir == 'L':
-        dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[2], dice[1], dice[5], dice[0], dice[4], dice[3]
-        c-=1
+        if is_range(r, c-1):
+            dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[2], dice[1], dice[5], dice[0], dice[4], dice[3]
+            c-=1
     elif dir =='R':
-        dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[3], dice[1], dice[0], dice[5], dice[4], dice[2]
-        c+=1
+        if is_range(r, c+1):
+            dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[3], dice[1], dice[0], dice[5], dice[4], dice[2]
+            c+=1
     elif dir =='U':
-        dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[1], dice[5], dice[2], dice[3], dice[0], dice[4]
-        r-=1
+        if is_range(r-1, c):
+            dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[1], dice[5], dice[2], dice[3], dice[0], dice[4]
+            r-=1
     else:
-        dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[4], dice[0], dice[2], dice[3], dice[5], dice[1]
-        r+=1
+        if is_range(r+1, c):
+            dice[0], dice[1], dice[2], dice[3], dice[4], dice[5] = dice[4], dice[0], dice[2], dice[3], dice[5], dice[1]
+            r+=1
 r = r-1
 c = c-1
 visited[r][c] = 6
