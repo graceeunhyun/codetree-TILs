@@ -44,8 +44,6 @@ def checkCell(x, y, d):
 
 
 while in_range(x,y):
-    if not in_range(x, y) or visited[x][y][direction] == 1:
-        break
 
     if visited[x][y][direction]:
         print(-1)
