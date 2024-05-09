@@ -22,9 +22,13 @@ r = r-1
 c = c-1
 visited[r][c] = 6
 
+def is_range(x,y):
+    return 0<=x<n and 0<=y<n
+
 for i in range(m):
     roll_dice(dice, direction[i])
-    visited[r][c] = dice[5]
+    if is_range(r,c):
+        visited[r][c] = dice[5]
 
 for i in range(n):
     for j in range(n):
