@@ -20,7 +20,7 @@ def roll_dice(dice, dir):
         r+=1
 r = r-1
 c = c-1
-visited[r][c] = 5
+visited[r][c] = 6
 
 for i in range(m):
     roll_dice(dice, direction[i])
