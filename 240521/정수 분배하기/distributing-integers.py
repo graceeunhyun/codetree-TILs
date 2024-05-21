@@ -8,7 +8,7 @@ for i in range(n):
     arr.append (val)
 
 start = 1
-end = min(arr)
+end = 10000
 max_val = 0
 
 # 만들 수 있는 k 값의 
