@@ -9,7 +9,7 @@ for i in range(n):
 
 start = 1
 end = min(arr)
-max_val = 1
+max_val = 0
 
 # 만들 수 있는 k 값의 
 def is_possible(target):
