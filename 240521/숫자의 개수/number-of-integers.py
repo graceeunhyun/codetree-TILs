@@ -1,24 +1,37 @@
 n, m = map(int, input().split())
+
+#해당 값들은 정렬된 상태로 주어져서 sort() 의 동작이 필요하지 않음. 
 arr = list(map(int, input().split()))
 
-def findBinary(val):
-    start = 0 
-    end = n-1
-    idx = 0
-    max_idx = 0
+def lower_bound(target):
+    left = 0
+    right = n-1
     min_idx = n
 
-    while start <=end:
-        mid = (left + right)//2
-        if arr[mid] >= val:
-            max_idx = max(max_idx, mid)
-            right = mid-1
+    while left<=right:
+        mid = (left+right)//2
+        if arr[mid] >=target:
+            min_idx = min(min_idx, mid)
+            right = mid -1
         else:
-            left = mid+1
-            
+            left = mid + 1
+    return min_idx
 
+def upper_bound(target):
+    left = 0
+    right = n-1
+    min_idx = n
 
+    while left<=right:
+        mid = (left + right)//2
+        if arr[mid] > target:
+            min_idx = min(min_idx, mid)
+            right = mid -1
+        else:
+            left = mid +1
+   
+    return min_idx
 
 for i in range(m):
     val = int(input())
-    findBinary(val)
+    print(upper_bound(val)-lower_bound(val))
