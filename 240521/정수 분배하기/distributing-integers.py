@@ -20,7 +20,7 @@ def is_possible(target):
 
         # 아예 그 target 보다 작다면 해당 값은 false 입니다. 
 
-        val = (int)(elem // target)
+        val = (int)(elem / target)
         count +=val
     
     return count >=m
