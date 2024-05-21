@@ -19,10 +19,8 @@ def is_possible(target):
     for elem in arr:
 
         # 아예 그 target 보다 작다면 해당 값은 false 입니다. 
-        if elem < target:
-            return False
 
-        val = (int)(elem / target)
+        val = (int)(elem // target)
         count +=val
     
     return count >=m
