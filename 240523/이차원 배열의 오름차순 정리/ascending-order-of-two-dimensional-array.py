@@ -14,9 +14,7 @@ def less_than_k(target):
     # 우선 target 을 돌고 
     # row 와 col 을 돌면서 구할 수 있다 
     for i in range(1, n+1):
-        for j in range(1, n+1):
-            if i*j <= target:
-                count+=1      
+        count+=min(n, target//i)
 
     #print(target, count)
     return count
