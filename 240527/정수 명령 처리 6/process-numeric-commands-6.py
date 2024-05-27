@@ -37,10 +37,10 @@ for i in range(n):
         print(heap.size())
     
     elif val[0]  =="empty":
-        if heap.empty:
-            print(0)
-        else:
+        if heap.empty():
             print(1)
+        else:
+            print(0)
     
     elif val[0] =="pop":
         print(heap.pop())
