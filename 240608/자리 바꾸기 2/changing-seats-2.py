@@ -10,19 +10,20 @@ for i in range(k):
     move.append(val)
 
 dic = {}
-for i in range(n):
-    dic[i+1] = [i+1]
+for i in range(1, n+1):
+    dic[i] = set([i])
 
 #k 번의 자리바꿈이 있는 거 
 for i in range(3):
     #3k 정도 돌아가서 이제 수행 해야 한다. 
     for i in range(k):
         a, b = move[i]
+        v1, v2 = arr[a], arr[b]
         #자리 바꿈
         arr[a], arr[b] = arr[b], arr[a]
         #print(arr)
-        dic[arr[a]].append(b)
-        dic[arr[b]].append(a)
+        dic[v1].add(b)
+        dic[v2].add(a)
 
 for i in range(n):
     arr = dic[i+1]
